@@ -33,3 +33,11 @@ A program to send mails to report when certain threshold are met (such as disk u
       ```cron
       */5 *  *   *   *     python3 /absolute/path/to/simple-machine-reporting/check.py
       ```
+
+To test if the program is working, you can try creating a fake file with a specific size that would trigger the warning (but avoid actually maxing out your disk). Here's an example for creating a (fake) 10GB file
+
+```
+fallocate -l 10G gentoo_root.img
+```
+
+You can then remove it after receiving the mail as expected.
